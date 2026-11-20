@@ -76,7 +76,7 @@ text-decoration:none;
 
 .hero{
 height:100vh;
-background:url('./images/banner2.jpg') center/cover;
+background:url('../images/banner2.jpg') center/cover;
 position:relative;
 display:flex;
 align-items:center;
