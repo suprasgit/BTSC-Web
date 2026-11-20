@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Burnham Target Shooting Club</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./css/style.css">
+
+<script>
+var currImg = 1;
+function nextImg(){
+document.getElementById("gallery-imgbg").style.backgroundImage = "url('".concat("./images/SBPic", ((++currImg >15)? (currImg=1).toString(): currImg.toString()),"_500x500.jpg')");
+}
+
+function prevImg(){
+document.getElementById("gallery-imgbg").style.backgroundImage = "url('".concat("./images/SBPic", ((--currImg <1)? (currImg=15).toString(): currImg.toString()),"_500x500.jpg')");
+}
+
+  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+    key: "AIzaSyCobqRJxtQyEkSqSzBWYehY6F57Ij2sCV0",
+    v: "weekly",
+  });
+
+
+let map;
+async function init() {
+    // Import the needed libraries
+    const { Map } = await google.maps.importLibrary('maps');
+
+    // Create lat lng for location 
+    const myLatLng = { lat: 51.527867, lng: -0.664326 };
+	
+    // Create a new map from the div with id="map".
+    map = new Map(document.getElementById('map'), {
+        center: myLatLng,
+        zoom: 18,
+        renderingType: 'VECTOR',
+    });
+
+    // Create and display pointer on the map
+    new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "BTSC",
+    });
+
+    console.log(map);
+}
+
+void init();
+
+</script>
+
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <div class="logo">
+             BTSC
+        </div>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Disciplines</a></li>
+                <li><a href="#">Junior Programme</a></li>
+                <li><a href="./history.html">History</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="#contact" class="btn-primary">
+            Book a Visit
+        </a>
+    </div>
+</header>
+
+<section class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="tagline">
+            ESTABLISHED 1899
+        </span>
+
+        <h1>
+            Precision, Discipline & Heritage Since 1899
+        </h1>
+
+        <p>
+	    <b>Burnham Target Shooting Club</b><br/>	
+            One of Britain's oldest target shooting clubs welcoming adults,
+            families and junior members into a safe, supportive and inclusive
+            shooting community.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#" class="btn-primary">Become a Member</a>
+            <a href="#" class="btn-secondary">Visit The Club</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats">
+    <div class="container stats-grid">
+
+        <div>
+            <h2>1899</h2>
+            <p>Founded</p>
+        </div>
+
+        <div>
+            <h2>127+</h2>
+            <p>Years Heritage</p>
+        </div>
+
+        <div>
+            <h2>3</h2>
+            <p>Disciplines</p>
+        </div>
+
+        <div>
+            <h2>Junior</h2>
+            <p>Friendly</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Why Choose Burnham?</h2>
+            <p>
+                A unique combination of heritage, sport and community.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🏆 Historic Heritage</h3>
+                <p>
+                    Founded in 1899, Burnham is one of the UK's longest
+                    established target shooting clubs.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🎯 Expert Guidance</h3>
+                <p>
+                    Learn safely from experienced range officers and club
+                    members.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>👨‍👩‍👧 Family Friendly</h3>
+                <p>
+                    A welcoming environment for adults, families and
+                    junior shooters.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section discipline-section">
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>Disciplines</h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="discipline-card">
+            <img src="./images/smallbore_600x400.jpg" alt="">
+            <div class="content">
+                <h3>Smallbore Rifle</h3>
+                <p>25 Yard and 50 Metre Shooting</p>
+            </div>
+        </div>
+
+        <div class="discipline-card">
+            <img src="./images/10mAirPistol_600x400.jpg" alt="10m Air Pistol">
+            <div class="content">
+                <h3>10m Air Pistol</h3>
+                <p>Precision indoor competition discipline</p>
+            </div>
+        </div>
+
+        <div class="discipline-card">
+	    <img src="./images/10mAirRifle_600x400.jpg" alt="10m Air Rifle">
+            <div class="content">
+                <h3>10m Air Rifle</h3>
+                <p>Olympic style indoor target shooting</p>
+            </div>
+        </div>
+
+    </div>
+
+
+	<br/><br/>
+    <div class="section-title">
+        <h2>Range for Discipline </h2>
+     <img  style="border-radius:20px; height:600px;width:800px; "  src="./images/RangeUse.jpg" alt="">
+   </div>	
+</div>
+
+</section>
+
+<section class="junior-programme">
+
+    <div class="container split">
+
+        <div>
+            <!-- img src="https://placehold.co/700x500" alt="" -->
+            <img src="./images/Juniors1.jpg" alt="">
+        </div>
+
+        <div>
+
+            <span class="section-subtitle">
+                JUNIOR DEVELOPMENT PROGRAMME
+            </span>
+
+            <h2>
+                Building Confidence Through Sport
+            </h2>
+
+            <p>
+                Target shooting develops concentration, discipline,
+                responsibility and self-confidence.
+            </p>
+
+            <ul class="benefits">
+
+                <li>Foundation & Safety</li>
+                <li>Technical Development</li>
+                <li>Performance Building</li>
+                <li>Mental Resilience</li>
+                <li>Competition Preparation</li>
+		<li>NSRA Competition</li>
+		<li>British Shooting Nominated Meetings</li>
+
+            </ul>
+
+            <div class="pathway">
+                Try Shooting > Learn Safety > Club Practice > Competition > Long-Term Development
+            </div>
+
+           <p>
+		This programme is designed to produce athletes capable of shooting a complete ISSF qualification and final, and establish a clear pathway from junior beginner through to club, regional and ultimately national-level competition while maintaining enjoyment, safety and long-term athlete development.
+	   </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Club Facilities</h2>
+        </div>
+
+        <div class="facility-grid">
+
+            <div class="facility-item">
+                50m Outdoor Range
+            </div>
+
+            <div class="facility-item">
+                25 Yard Range
+            </div>
+
+            <div class="facility-item">
+                Indoor 10m Range
+            </div>
+
+            <div class="facility-item">
+                Clubhouse
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="history">
+
+<div class="container">
+
+    <h2>Heritage Timeline</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <span>1899</span>
+            Club Founded
+        </div>
+
+        <div class="timeline-item">
+            <span>1908</span>
+            Move to Aldbourne Road
+        </div>
+
+        <div class="timeline-item">
+            <span>1964</span>
+            Clubhouse Completed
+        </div>
+
+        <div class="timeline-item">
+            <span>1999</span>
+            Centenary Celebrations
+        </div>
+
+        <div class="timeline-item">
+            <span>Today</span>
+            Developing Future Shooters
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<section class="section gallery">
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>Gallery</h2>
+    </div>
+
+    <div class="container" >
+		
+	<div style="position: float; display: flex; justify-content: center;" >
+		<div class="btnNext-left" style="float: left;" onclick="javascript: prevImg();"><span style="display: inline-block; height: 45%; vertical-align: middle;" ></span><img src="./images/arrLeft.png" /></div>
+       		<img class="gallery-img" id="gallery-imgbg" style="background-image:url('./images/SBPic1_500x500.jpg');" alt="Display Image"/>
+		<div class="btnNext-right" style="float: right;" onclick="javascript: nextImg();"><span style="display: inline-block; height: 45%; vertical-align: middle;" ></span><img src="./images/arrRight.png" /></div>
+	</div>
+    </div>
+
+</div>
+
+</section>
+
+<section class="new-shooter">
+
+<div class="container center">
+
+    <h2>Never Shot Before?</h2>
+
+    <p>
+        Most members started exactly where you are today.
+        Equipment can be provided and experienced club members
+        will help guide you through your first visit.
+    </p>
+
+    <a href="#" class="btn-primary">
+        Arrange a Visit
+    </a>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<h2>Contact Us</h2>
+
+<div class="contact-grid">
+
+<div>
+
+<h3>Visit the Club</h3>
+
+<p>
+17 Aldbourne Road, Burnham, Slough - SL1 7NJ
+</p>
+
+<div class="map-placeholder">
+	<div id="map"></div>
+</div>
+
+</div>
+
+<form>
+
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Telephone">
+
+<select>
+<option>Membership</option>
+<option>Junior Membership</option>
+<option>Visitor Session</option>
+<option>General Enquiry</option>
+</select>
+
+<textarea rows="6"
+placeholder="How can we help?"></textarea>
+
+<button type="submit" class="btn-primary">
+Send Enquiry
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<h3>Burnham Target Shooting Club</h3>
+
+<p>
+Precision • Discipline • Heritage Since 1899
+</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>
