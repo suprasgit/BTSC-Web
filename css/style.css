@@ -76,8 +76,7 @@ text-decoration:none;
 
 .hero{
 height:100vh;
-/*background:url('https://placehold.co/1920x1080') center/cover;*/
-background:url('./images/Banner2.JPG') center/cover;
+background:url('./images/banner2.jpg') center/cover;
 position:relative;
 display:flex;
 align-items:center;
