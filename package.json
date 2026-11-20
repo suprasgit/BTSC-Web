@@ -3,4 +3,7 @@
     "dev": "next dev",
     "build": "next build"
   }
+  "dependencies": {
+    "next": "^15.0.0"
+  }  
 }
